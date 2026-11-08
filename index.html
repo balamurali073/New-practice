@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balamurali R V — Portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030b1c;--panel:rgba(10,40,80,.45);--blue:#0a5cff;--cyan:#22e6f0;--amber:#ff9d4d;--text:#d8ecff;--dim:#7fa3c7;--line:rgba(34,230,240,.45)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',system-ui,sans-serif;font-size:19px;line-height:1.5;overflow-x:hidden}
+h1,h2,h3,.hud{font-family:'Orbitron','Segoe UI',sans-serif;letter-spacing:.08em}
+section{min-height:100vh;padding:110px 6vw 120px;position:relative;
+ background:radial-gradient(ellipse at 50% 100%,rgba(10,92,255,.35),transparent 60%),linear-gradient(#030b1c,#05142e)}
+section::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;pointer-events:none;
+ background:linear-gradient(transparent,rgba(34,230,240,.08)),repeating-linear-gradient(90deg,transparent 0 78px,rgba(34,230,240,.18) 78px 80px)}
+.wrap{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+
+/* top nav */
+nav{position:fixed;right:0;bottom:0;z-index:50;display:flex;gap:30px;padding:14px 34px;
+ background:rgba(3,11,28,.88);border-top:1px solid var(--line);border-left:1px solid var(--line);clip-path:polygon(24px 0,100% 0,100% 100%,0 100%)}
+nav a{color:var(--text);text-decoration:none;font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.1em;padding:4px 2px;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--cyan);border-color:var(--cyan)}
+nav a:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* hero */
+#home{display:grid;align-items:center;padding-top:60px}
+.cabin{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.window{aspect-ratio:16/10;border-radius:60px;border:6px solid #0a1d3d;box-shadow:0 0 0 2px var(--line),0 0 50px rgba(10,92,255,.5),inset 0 0 40px #000;position:relative;overflow:hidden;
+ background:radial-gradient(circle at 30% 40%,#e8e8e8 0 28%,#9a9a9a 29% 33%,transparent 34%),radial-gradient(circle at 78% 20%,#fff 0 1px,transparent 2px),radial-gradient(circle at 60% 70%,#fff 0 1px,transparent 2px),radial-gradient(circle at 90% 60%,#fff 0 1px,transparent 2px),#02040a}
+.moon{position:absolute;left:8%;top:12%;width:46%;aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle at 30% 30%,#f3f3f3,#bdbdbd 55%,#6e6e6e);box-shadow:inset -18px -10px 30px rgba(0,0,0,.55)}
+.moon::before{content:"";position:absolute;inset:0;border-radius:50%;
+ background:radial-gradient(circle at 35% 40%,rgba(0,0,0,.18) 0 8%,transparent 9%),radial-gradient(circle at 62% 62%,rgba(0,0,0,.2) 0 11%,transparent 12%),radial-gradient(circle at 55% 25%,rgba(0,0,0,.15) 0 6%,transparent 7%)}
+.window .txt{position:absolute;left:10%;top:18%;font-family:Orbitron,sans-serif;color:#eee;opacity:.9;font-size:clamp(18px,2.4vw,30px);line-height:1.3;text-shadow:0 0 12px #000}
+.status{background:var(--panel);border:1px solid var(--line);padding:28px 30px;position:relative;backdrop-filter:blur(4px);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%)}
+.status h1{font-size:clamp(26px,3.6vw,46px);font-weight:500;line-height:1.1;margin-bottom:16px}
+.badges{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.badge{width:40px;height:40px;border:2px solid var(--cyan);border-radius:50%;display:grid;place-items:center;font-family:Orbitron;font-size:13px;color:var(--cyan)}
+.role{font-family:Orbitron;font-size:clamp(20px,2.4vw,30px);line-height:1.2}
+.role small{display:block;font-size:.55em;color:var(--dim);margin-top:6px;letter-spacing:.2em}
+.hexes{display:flex;gap:18px;align-items:center;margin:22px 0 8px}
+.hex{width:44px;height:50px;background:var(--cyan);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);position:relative;opacity:.9}
+.hex::after{content:"";position:absolute;inset:3px;background:#06203f;clip-path:inherit}
+.hex.f::after{background:rgba(34,230,240,.25)}
+.bars{margin-left:auto;display:grid;gap:6px;width:110px}
+.bars i{display:block;height:7px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.bars i:nth-child(2){width:80%}.bars i:nth-child(3){width:55%}
+.led{color:var(--cyan);font-size:15px;letter-spacing:.15em}
+.led::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3dff9a;margin-right:8px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.cta{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap}
+.btn{font-family:Orbitron;font-size:13px;letter-spacing:.12em;color:var(--text);background:rgba(10,92,255,.25);border:1px solid var(--cyan);padding:11px 22px;text-decoration:none;cursor:pointer;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);transition:background .2s}
+.btn:hover{background:rgba(34,230,240,.3)}
+
+/* sections */
+h2{font-size:clamp(24px,3vw,36px);font-weight:500;margin-bottom:8px}
+.sub{color:var(--dim);margin-bottom:34px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);padding:24px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.card h3{font-size:16px;color:var(--cyan);margin-bottom:6px;font-weight:700}
+.tag{display:inline-block;font-size:14px;color:var(--amber);border:1px solid rgba(255,157,77,.5);padding:0 9px;margin:8px 6px 0 0}
+.skills dt{font-family:Orbitron;font-size:13px;color:var(--cyan);margin-top:14px;letter-spacing:.1em}
+.skills dd{color:var(--text)}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
+.contact a.row{display:flex;gap:16px;align-items:center;padding:18px 22px;margin-bottom:14px;border:1px solid var(--line);background:var(--panel);color:var(--text);text-decoration:none}
+.contact a.row:hover{background:rgba(34,230,240,.15)}
+.contact b{font-family:Orbitron;font-size:12px;color:var(--cyan);width:90px;letter-spacing:.12em}
+
+/* droid guide */
+.guide{position:fixed;left:18px;bottom:18px;z-index:60;display:flex;align-items:flex-end;gap:10px;max-width:min(430px,92vw)}
+.droid{width:92px;height:118px;position:relative;flex:none;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.head{position:absolute;left:24px;top:0;width:46px;height:30px;border-radius:46px 46px 8px 8px;background:radial-gradient(circle at 35% 30%,#fff,#cfd6df);z-index:2;border:2px solid #9aa4b2}
+.head::before{content:"";position:absolute;left:19px;top:10px;width:9px;height:9px;border-radius:50%;background:#111;box-shadow:0 0 0 2px #ff9d4d}
+.ball{position:absolute;left:0;top:26px;width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#d7dde6 60%,#98a3b3);border:2px solid #8b95a5;overflow:hidden;animation:roll 6s linear infinite}
+.ball::before,.ball::after{content:"";position:absolute;border-radius:50%;border:5px solid #aab4c4}
+.ball::before{width:44px;height:44px;left:8px;top:8px;background:#e8edf3}
+.ball::after{width:34px;height:34px;right:6px;bottom:8px;background:#e8edf3}
+.shadow{position:absolute;left:10px;bottom:-6px;width:72px;height:10px;background:radial-gradient(#22e6f0aa,transparent 70%)}
+@keyframes roll{to{filter:hue-rotate(0)}}
+.dialog{background:rgba(3,11,28,.95);border:2px solid var(--cyan);padding:14px 16px;font-family:Orbitron,sans-serif;font-size:11px;line-height:1.7;letter-spacing:.06em;box-shadow:0 0 22px rgba(34,230,240,.3);clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.dialog h4{font-size:12px;margin-bottom:6px;letter-spacing:.14em}
+.dialog button{margin-top:10px;font-family:inherit;font-size:11px;color:var(--text);background:none;border:1px solid var(--cyan);padding:5px 14px;cursor:pointer}
+.dialog.min p,.dialog.min button{display:none}
+
+@media(max-width:820px){.cabin,.about{grid-template-columns:1fr}nav{gap:14px;padding:12px 16px;left:0}nav a{font-size:11px}.guide{bottom:56px}.dialog{font-size:10px}section{padding-bottom:160px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <a href="#home" class="on">HOME</a><a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#contact">CONTACT</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" data-say="My creator asked me to guide you through the lab. Scroll to start the visit or use the menu to jump to a section.">
+  <div class="wrap cabin">
+    <div class="window" role="img" aria-label="Spaceship window showing the moon">
+      <div class="moon"></div>
+      <div class="txt" style="left:auto;right:8%;text-align:right">PORTFOLIO<br>2026</div>
+    </div>
+    <div class="status">
+      <div class="badges"><span class="badge">20</span><span class="badge">AI</span></div>
+      <h1>BALAMURALI R V</h1>
+      <div class="role">AI / ML ENGINEER<small>IT UNDERGRAD · CLASS OF 2028</small></div>
+      <div class="hexes"><span class="hex"></span><span class="hex f"></span><span class="hex"></span><div class="bars"><i></i><i></i><i></i></div></div>
+      <div class="led">OPEN TO INTERNSHIPS</div>
+      <div class="cta"><a class="btn" href="#projects">VIEW PROJECTS</a><a class="btn" href="#contact">CONTACT ME</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-say="This is the crew file. Python, computer vision and Flask are the main tools here.">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="sub">Information Technology undergraduate building practical AI products: document automation, computer vision and web apps.</p>
+    <div class="about">
+      <div class="card">
+        <h3>Education</h3>
+        <p><b>B.Tech, Information Technology</b><br>Sri Sairam Engineering College<br><span style="color:var(--dim)">Expected graduation 2028</span></p>
+        <h3 style="margin-top:22px">Experience</h3>
+        <p><b>Internship Trainee</b>, Approtech R&amp;D Solutions Pvt. Ltd.<br><span style="color:var(--dim)">8–22 June 2026 · 15 days</span><br>Worked on AI and computer-vision project activities, including a YOLO-based vehicle-detection prototype.</p>
+        <h3 style="margin-top:22px">Achievements</h3>
+        <p>600+ problems solved on Skillrack.<br>Completed Student SOC Foundation Training (Metamorphs).<br>Shortlisted for project presentations; hackathon and coding challenge participant.</p>
+      </div>
+      <div class="card">
+        <h3>Technical skills</h3>
+        <dl class="skills">
+          <dt>PROGRAMMING</dt><dd>Python, Java, C, C++, JavaScript</dd>
+          <dt>AI / ML</dt><dd>Supervised learning, classification, Random Forest, YOLO object detection</dd>
+          <dt>NLP / OCR</dt><dd>LLM API integration, LangGraph, Tesseract / cloud OCR</dd>
+          <dt>FRAMEWORKS</dt><dd>Flask, scikit-learn, REST APIs, HTML, CSS</dd>
+          <dt>DATABASES</dt><dd>MySQL, PostgreSQL, MongoDB, Neo4j (intro)</dd>
+          <dt>TOOLS</dt><dd>Git, GitHub, Linux, VS Code, Azure (fundamentals)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" data-say="Four missions on file. Each one started as a real problem worth solving.">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Selected work in AI, computer vision and full-stack development.</p>
+    <div class="grid">
+      <article class="card"><h3>Zentrix</h3><p><b>AI-powered institutional document workflow.</b> Handles bonafide, leave, scholarship and NOC requests with OCR extraction, LLM document classification, missing-information detection, LangGraph agents, role-based routing, SLA escalation and audit tracking.</p><span class="tag">LangGraph</span><span class="tag">OCR</span><span class="tag">PostgreSQL</span><span class="tag">Neo4j</span></article>
+      <article class="card"><h3>YOLO Vehicle Detection</h3><p>Computer-vision prototype that identifies vehicles in visual input using YOLO. Built during my internship at Approtech R&amp;D Solutions, focused on real-time detection workflow.</p><span class="tag">YOLO</span><span class="tag">Python</span><span class="tag">Computer vision</span></article>
+      <article class="card"><h3>ResumeGuard AI</h3><p>Flask app that analyzes resume content and returns AI-assisted feedback. Explored free-model integration as an alternative to paid APIs.</p><span class="tag">Flask</span><span class="tag">LLM</span><span class="tag">Python</span></article>
+      <article class="card"><h3>EventEase</h3><p>Multi-tenant event and ticket reservation system with Admin, Organizer and Attendee roles, ticket tiers, temporary ticket holds, a mock payment flow and a dashboard.</p><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Chart.js</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-say="Mission control is open. Send my creator a message.">
+  <div class="wrap contact" style="max-width:640px">
+    <h2>Contact</h2>
+    <p class="sub">Looking for an AI / ML or software internship. Write to me or call.</p>
+    <a class="row" href="mailto:bbalamurali073@gmail.com"><b>EMAIL</b>bbalamurali073@gmail.com</a>
+    <a class="row" href="tel:+919042059849"><b>PHONE</b>+91 90420 59849</a>
+    <a class="row" href="https://github.com/balamurali073" id="gh"><b>GITHUB</b>https://github.com/balamurali073</a>
+    
+  </div>
+</section>
+
+<!-- Droid guide -->
+<aside class="guide" aria-live="polite">
+  <div class="droid" aria-hidden="true"><div class="head"></div><div class="ball"></div><div class="shadow"></div></div>
+  <div class="dialog" id="dlg">
+    <h4>WELCOME ABOARD</h4>
+    <p id="say"></p>
+    <button id="ok">OH, THANKS</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var say=document.getElementById('say'),dlg=document.getElementById('dlg'),links=[].slice.call(document.querySelectorAll('nav a'));
+  document.getElementById('ok').onclick=function(){dlg.classList.add('min');};
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  say.textContent=secs[0].dataset.say;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      say.textContent=e.target.dataset.say;
+      links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});
+      dlg.classList.remove('min');
+    });
+  },{threshold:.55});
+  secs.forEach(function(s){io.observe(s);});
+  // Put your real profile links here:
+  var GITHUB='https://github.com/balamurali073';
+  function wire(id,url,label){var el=document.getElementById(id);if(url){el.href=url;el.target='_blank';el.rel='noopener';el.lastChild.textContent=url.replace(/^https?:\/\//,'');}else{el.addEventListener('click',function(e){e.preventDefault();});}}
+  wire('gh',GITHUB);
+})();
+</script>
+</body>
+</html>
